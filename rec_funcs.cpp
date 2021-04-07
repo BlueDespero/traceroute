@@ -25,8 +25,8 @@ struct icmp* get_icmp_header(struct sockaddr_in sender, u_int8_t *buffer)
 
 	if (icmp_header->icmp_type == ICMP_TIMXCEED)
 	{
-		struct ip* ip_header_2 = (struct ip*) (icmp_packet + 4);
-		u_int8_t* icmp_packet_2 = buffer + 4 * ip_header->ip_hl + 4 * ip_header_2->ip_hl;
+		struct ip* ip_header_2 = (struct ip*) (icmp_packet + 8);
+		u_int8_t* icmp_packet_2 = buffer + 8 + 4 * ip_header->ip_hl + 4 * ip_header_2->ip_hl;
 		struct icmp* icmp_header_2 = (struct icmp*) icmp_packet_2;
 		return icmp_header_2;
 	}
