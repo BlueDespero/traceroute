@@ -41,7 +41,7 @@ void print_results(int i, int32_t ip_1, int32_t ip_2, int32_t ip_3, int32_t avr_
         }
 
         if (avr_time != -1)
-            printf("%" PRId32 "ms\n", avr_time);
+            printf("%" PRId32 "ms", avr_time);
         else
             printf("???");
     }
